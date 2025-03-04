@@ -1,90 +1,48 @@
-// Definimos las variables de colores
-$azul-electrico: #007BFF;
-$purpura-oscuro: #5A189A;
-$negro-azulado: #1B1B2F;
-$verde-neon: #00E676;
-$blanco: #FFFFFF;
-$gris: #6C757D;
+@import 'variables';
+@import 'global';
 
-// Estilos generales
-body {
-    background-color: $negro-azulado;
-    color: $blanco;
-    font-family: Arial, sans-serif;
-}
-
-h1, h2, h3 {
-    color: $azul-electrico;
-}
-
-p {
-    color: $gris;
-}
-
-// Navbar
-.navbar {
-    background-color: $purpura-oscuro !important;
-
-    .nav-link {
-        color: $blanco !important;
-        
-        &:hover {
-            color: $verde-neon !important;
-        }
-    }
-}
-
-// Botones
-.btn-primary {
-    background-color: $azul-electrico;
-    border: none;
-    
-    &:hover {
-        background-color: darken($azul-electrico, 10%);
-    }
-}
-
-// Secciones generales
-.container {
-    padding: 20px;
-}
-
-// Footer
-footer {
-    background-color: $purpura-oscuro;
-    text-align: center;
-    padding: 15px;
-    color: $blanco;
-}
-
-// Media Queries
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-}
-
-// Estilos para la sección de proyectos
 .proyectos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $espaciado-general;
+  padding: $espaciado-general;
+  text-align: center;
 
-    .proyecto {
-        background-color: $negro-azulado;
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-        
-        img {
-            width: 100%; // Se ajusta automáticamente al contenedor
-            height: 200px; // Tamaño fijo para todas las imágenes
-            object-fit: cover; // Evita distorsión
-            border-radius: 10px;
-        }
+  .proyecto-card {
+    background-color: $negro-azulado;
+    border-radius: 10px;
+    box-shadow: $sombra-general;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: $espaciado-general;
+
+    &:hover {
+      transform: scale(1.05);
     }
-}
 
+    img {
+      width: 100%;
+      height: 200px; // Altura fija para las imágenes
+      object-fit: cover; // Ajusta la imagen para que todas tengan el mismo tamaño sin distorsión
+      border-bottom: 4px solid $purpura-oscuro;
+    }
+
+    h3 {
+      font-size: $subtitulo-size;
+      color: $azul-electrico;
+      margin: $espaciado-general 0;
+      text-align: center;
+    }
+
+    p {
+      font-size: $texto-size;
+      color: $gris;
+      padding: 0 $espaciado-general $espaciado-general;
+      text-align: justify; // Justificación de texto
+    }
+  }
+}

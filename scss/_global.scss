@@ -1,0 +1,73 @@
+@import 'variables';
+
+// Estilos generales para el cuerpo
+body {
+    background-color: $negro-azulado;
+    color: $blanco;
+    font-family: $fuente-principal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: $azul-electrico;
+    margin-bottom: $espaciado-general;
+}
+
+p {
+    color: $gris;
+    font-size: $texto-size;
+    line-height: 1.6;
+}
+
+.container {
+    padding: $espaciado-general;
+    box-shadow: $sombra-general;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+// Botones
+button, .btn {
+    background-color: $azul-electrico;
+    color: $blanco;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($azul-electrico, 10%);
+    }
+}
+
+// Navbar
+.navbar {
+    background-color: $purpura-oscuro;
+
+    .nav-link {
+        color: $blanco !important;
+        &:hover {
+            color: $verde-neon !important;
+        }
+    }
+}
+
+// Footer
+footer {
+    background-color: $purpura-oscuro;
+    text-align: center;
+    padding: $espaciado-general;
+    color: $blanco;
+}
+
+// Media Queries
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: $subtitulo-size;
+    }
+}

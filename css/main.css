@@ -2,18 +2,43 @@ body {
   background-color: #1B1B2F;
   color: #FFFFFF;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1, h2, h3 {
   color: #007BFF;
+  margin-bottom: 20px;
 }
 
 p {
   color: #6C757D;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+button, .btn {
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+button:hover, .btn:hover {
+  background-color: rgb(0, 98.4, 204);
 }
 
 .navbar {
-  background-color: #5A189A !important;
+  background-color: #5A189A;
 }
 .navbar .nav-link {
   color: #FFFFFF !important;
@@ -22,22 +47,10 @@ p {
   color: #00E676 !important;
 }
 
-.btn-primary {
-  background-color: #007BFF;
-  border: none;
-}
-.btn-primary:hover {
-  background-color: rgb(0, 98.4, 204);
-}
-
-.container {
-  padding: 20px;
-}
-
 footer {
   background-color: #5A189A;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   color: #FFFFFF;
 }
 
@@ -45,26 +58,49 @@ footer {
   .container {
     padding: 10px;
   }
+  h1 {
+    font-size: 1.8rem;
+  }
 }
 .proyectos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+.proyectos .proyecto-card {
+  background-color: #1B1B2F;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
-.proyectos .proyecto {
-  background-color: #1B1B2F;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+.proyectos .proyecto-card:hover {
+  transform: scale(1.05);
 }
-.proyectos .proyecto img {
+.proyectos .proyecto-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-bottom: 4px solid #5A189A;
+}
+.proyectos .proyecto-card h3 {
+  font-size: 1.8rem;
+  color: #007BFF;
+  margin: 20px 0;
+  text-align: center;
+}
+.proyectos .proyecto-card p {
+  font-size: 1rem;
+  color: #6C757D;
+  padding: 0 20px 20px;
+  text-align: justify;
 }
 
 /*# sourceMappingURL=main.css.map */
